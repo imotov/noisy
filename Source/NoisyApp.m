@@ -45,7 +45,7 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
-- (void)awakeFromNib
+- (void) awakeFromNib
 {
     _generator = [[NoiseGenerator alloc] init];
     
