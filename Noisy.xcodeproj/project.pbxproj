@@ -44,11 +44,11 @@
 		552C29510E04A2CC0048FF6B /* NoisyApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoisyApp.m; path = Source/NoisyApp.m; sourceTree = "<group>"; };
 		552C29640E04A3090048FF6B /* Noisy.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; name = Noisy.sdef; path = Resources/Noisy.sdef; sourceTree = "<group>"; };
 		552C29A20E04A4900048FF6B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = Resources/Credits.rtf; sourceTree = "<group>"; };
-		556725540E57EBB300327D19 /* Create Zip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "Create Zip"; path = "/Users/iccir/Projects/build/Debug/Create Zip"; sourceTree = "<absolute>"; };
 		558406C60E10CEDD00EA991B /* Noisy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Noisy.icns; path = Resources/Noisy.icns; sourceTree = "<group>"; };
 		55BC13940DE0E3BD00775B7B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Noisy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noisy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB2BD4231388F4F300365468 /* Create Zip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Create Zip"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Noisy.app */,
+				AB2BD4231388F4F300365468 /* Create Zip */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,7 +154,7 @@
 			);
 			name = "Create Zip";
 			productName = "Create Zip";
-			productReference = 556725540E57EBB300327D19 /* Create Zip */;
+			productReference = AB2BD4231388F4F300365468 /* Create Zip */;
 			productType = "com.apple.product-type.tool";
 		};
 		8D1107260486CEB800E47090 /* Noisy */ = {
