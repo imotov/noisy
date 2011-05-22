@@ -268,13 +268,6 @@ static OSStatus sDefaultOutputDeviceChanged(AudioHardwarePropertyID inPropertyID
 }
 
 
-- (void)setVolume:(double)volume
-{
-    // Set the volume along a parabolic curve
-    _volume = volume * volume;
-}
-
-
 - (void) setType:(NoiseType)newType
 {
     NoiseType oldType = _type;
@@ -284,12 +277,6 @@ static OSStatus sDefaultOutputDeviceChanged(AudioHardwarePropertyID inPropertyID
         if (newType == NoNoiseType) [self stopAudio];
         if (oldType == NoNoiseType) [self startAudio];
     }
-}
-
-
-- (double) volume
-{
-    return _volume;
 }
 
 

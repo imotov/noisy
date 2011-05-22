@@ -30,7 +30,6 @@
 #import "NoiseGenerator.h"
 
 static NSString *sNoiseTypeKeyPath   = @"NoiseType";
-static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
 
 
 @implementation NoisyApp
@@ -40,7 +39,6 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
 
     [defaults setObject:[NSNumber numberWithInteger:NoNoiseType] forKey:sNoiseTypeKeyPath];
-    [defaults setObject:[NSNumber numberWithDouble:0.5] forKey:sNoiseVolumeKeyPath];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
@@ -52,16 +50,13 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
     [defaults addObserver:self forKeyPath:sNoiseTypeKeyPath   options:0 context:NULL];
-    [defaults addObserver:self forKeyPath:sNoiseVolumeKeyPath options:0 context:NULL];
 
-    [_generator setVolume: [[NSUserDefaults standardUserDefaults] doubleForKey:sNoiseVolumeKeyPath]];
     [_generator setType:   [[NSUserDefaults standardUserDefaults] integerForKey:sNoiseTypeKeyPath]];
 }
 
 
 - (void) dealloc
 {
-    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:sNoiseVolumeKeyPath];
     [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:sNoiseTypeKeyPath];
 
     [_generator release];
@@ -75,10 +70,6 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
     if ([keyPath isEqualToString:sNoiseTypeKeyPath]) {
         NoiseType type = [[NSUserDefaults standardUserDefaults] integerForKey:sNoiseTypeKeyPath];
         _generator.type = type;
-
-    } else if ([keyPath isEqualToString:sNoiseVolumeKeyPath]) {
-        double volume = [[NSUserDefaults standardUserDefaults] doubleForKey:sNoiseVolumeKeyPath];
-        _generator.volume = volume;
     }
 }
 
@@ -147,26 +138,6 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
     }
 
     [[NSUserDefaults standardUserDefaults] setInteger:type forKey:sNoiseTypeKeyPath];
-}
-
-
-- (id) scriptVolume
-{
-    double volume = [[NSUserDefaults standardUserDefaults] doubleForKey:sNoiseVolumeKeyPath];
-    NSInteger roundedVolume = round(volume * 100);
-    return [NSNumber numberWithInteger:roundedVolume];
-}
-
-
-- (void) setScriptVolume:(id)volumeAsNumber
-{
-    double volume = [volumeAsNumber doubleValue];
-
-    volume /= 100.0;
-    if (volume > 100.0) volume = 100.0;
-    if (volume < 0.0)   volume = 0.0;
-
-    [[NSUserDefaults standardUserDefaults] setDouble:volume forKey:sNoiseVolumeKeyPath];
 }
 
 @end

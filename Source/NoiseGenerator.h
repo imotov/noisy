@@ -71,9 +71,6 @@ typedef enum {
 	long			_randomBufferPos;
 }
 
-- (double) volume;
-- (void) setVolume:(double)volume;
-
 - (NoiseType) type;
 - (void) setType:(NoiseType)type;
 

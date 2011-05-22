@@ -22,9 +22,6 @@
         	<property name="noise type" code="NNty" type="NoiseType" access="rw" description="The type of noise to play.">
         		<cocoa key="scriptNoiseType"/>
         	</property>
-        	<property name="noise volume" code="NNvo" type="integer" access="rw" description="The volume of the noise.">
-        		<cocoa key="scriptVolume"/>
-        	</property>
         </class>
     </suite>
 </dictionary>
